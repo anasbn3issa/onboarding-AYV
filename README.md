@@ -1,9 +1,9 @@
-# Watto Payement Services
+# AYV STUDIO
 ## _Onboarding Test_
 
 ![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)
 
-This project is an introduction to the current tech stack used in Watto V1.
+This project is an introduction to the current tech stack used in AYV.
 
 - Start by Forking this rep
 - Clone your project localy
