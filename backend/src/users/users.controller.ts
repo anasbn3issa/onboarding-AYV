@@ -4,22 +4,16 @@ import { UsersService } from "./users.service";
 
 @Controller('users')
 export class UserController {
-    constructor(userService: UsersService) {}
+    constructor(private userService: UsersService) {}
 
     @Get()
     getAllUsers() {
-        return 'This action returns all users';
+        return this.userService.fetchUsers();
     }
 
     @Post()
     createUser(@Body() userData: CreateUserDto) {
-        console.log(userData);
-        return {};
+        return this.userService.createUser(userData)
     }
 
-    @Get(':id')
-    getUserById(@Param('id') id: string) {
-        return `This action returns a #${id} user`;
-
-    }
 }

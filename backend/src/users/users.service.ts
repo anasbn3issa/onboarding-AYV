@@ -1,15 +1,17 @@
 import { Injectable } from "@nestjs/common";
+import { CreateUserType } from "src/utils/types";
 import { User } from "./users.model";
 
 @Injectable()
 export class UsersService {
-    private users: User[] = [];
+    private users: User[] = [{id:"1", username: "jane", role: "ADMIN"}];
 
-    insertUser(name: string, email: string, password: string, role: string) {
-        const userId = Math.random().toString();
-        const newUser = new User(userId, name,password, role);
-        this.users.push(newUser);
-        return userId; 
+    fetchUsers() {
+        return this.users;
+    }
+
+    createUser(userDetails : CreateUserType) {
+        return this.users.push(userDetails);
     }
 
 }
