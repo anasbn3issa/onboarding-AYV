@@ -26,4 +26,8 @@ export class CarsService {
     deleteCarById(id: string) {
         return this.carsRepository.delete(id);
     }
+
+    updateCarById(id: string, carDetails: CreateCarType) {
+        return this.carsRepository.update(id, carDetails);
+    }
 }
