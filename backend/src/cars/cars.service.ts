@@ -18,4 +18,12 @@ export class CarsService {
         const newCar = this.carsRepository.create({...carDetails, createdAt: new Date(), user: null});
         return this.carsRepository.save(newCar);
     }
+
+    fetchCarById(id: string) {
+        return this.carsRepository.findOneById(id);
+    }
+
+    deleteCarById(id: string) {
+        return this.carsRepository.delete(id);
+    }
 }
