@@ -1,5 +1,6 @@
 import { Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
+import { CreateCarType } from "src/utils/types";
 import { Repository } from "typeorm";
 import { Car } from "./cars.model";
 
@@ -11,5 +12,10 @@ export class CarsService {
 
     fetchCars() {
         return this.carsRepository.find();
+    }
+    
+    createCar(carDetails: CreateCarType) {
+        const newCar = this.carsRepository.create({...carDetails, createdAt: new Date(), user: null});
+        return this.carsRepository.save(newCar);
     }
 }
