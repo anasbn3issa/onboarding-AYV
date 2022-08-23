@@ -18,4 +18,8 @@ export class UsersService {
     const newUser = this.userRepository.create({...userDetails, createdAt: new Date()});
     return this.userRepository.save(newUser);
   }
+
+  deleteUser(id: number) {
+    return this.userRepository.delete(id);
+  }
 }
