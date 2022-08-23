@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
+import { encodePassword } from 'src/utils/bcrypt';
 import { CreateUserType } from 'src/utils/types';
 import { Repository } from 'typeorm';
 import { User } from './users.model';
@@ -15,7 +16,10 @@ export class UsersService {
   }
 
   createUser(userDetails: CreateUserType) {
-    const newUser = this.userRepository.create({...userDetails, createdAt: new Date()});
+    const password = encodePassword(userDetails.password);
+    console.log(password);
+    
+    const newUser = this.userRepository.create({...userDetails, password, createdAt: new Date()});
     return this.userRepository.save(newUser);
   }
 
