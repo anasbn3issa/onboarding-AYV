@@ -8,6 +8,7 @@ import {TypeOrmModule} from '@nestjs/typeorm';
 import entities from './typeorm';
 import { CarsModule } from './cars/cars.module';
 import { AuthModule } from './auth/auth.module';
+import { AuthService } from './auth/auth.service';
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
@@ -34,6 +35,6 @@ import { AuthModule } from './auth/auth.module';
     })
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, AuthService],
 })
 export class AppModule {}
