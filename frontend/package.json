@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.35.1",
     "next": "12.2.5",
     "react": "18.2.0",
     "react-axios-query": "^0.0.2",
