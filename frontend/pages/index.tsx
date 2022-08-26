@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import React from 'react'
 import FullScreenNavBar from '../components/FullScreenNavBar';
+import DataTable from '../components/tables/DataTable';
 
 const Home: NextPage = () => {
 
