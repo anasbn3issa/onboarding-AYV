@@ -16,36 +16,31 @@ export default function DataTable({
       {/* in this table , the headings should iterate columns values, the data should iterate data from props */}
       <div className="flex flex-col w-full border-t border-r border-black">
         <div className="flex flex-shrink-0 bg-black text-white">
-          <div className="flex items-center flex-grow w-0 h-10 px-2 border-b border-l border-black">
             {Object.keys(columns).map((key, index) => {
               return (
-                <span key={index} className="flex-grow">
+                <span key={index} className="flex items-center flex-grow w-0 h-10 px-2 border-b border-l border-black">
                   {columns[key].field}
                 </span>
               );
             })}
-          </div>
         </div>
+
         <div className="overflow-auto">
           {data.map((item, index) => {
             return (
               <div key={index} className="flex flex-col w-full">
-                <div className="flex flex-shrink-0 bg-white px-2">
+                <div className="flex flex-shrink-0 bg-white px-1">
                   {Object.keys(item).map((key, index) => {
                     return (
-                      <span key={index} className="flex-grow">
+                      <span key={index} className="flex items-center flex-grow w-0 h-10 px-2 border-b border-l border-black">
                         {item[key]}
                       </span>
                     );
-                  }
-                  )}
+                  })}
                 </div>
               </div>
             );
           })}
-          
-
-         
         </div>
       </div>
     </>

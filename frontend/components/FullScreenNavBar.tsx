@@ -1,12 +1,12 @@
-import { useState } from "react"
+import React, { useState } from "react"
 
 function MobileNav({open,setOpen}) {
     return(
         <div className={`absolute top-0 left-0 w-screen bg-white transform ${open ? "-translate-y-0" : "translate-y-full"} transition-transform duration-300 ease-in-out filter`} >
             <div className="flex flex-col justify-center items-center mt-28">
-                <a className="text-2xl font-bold text-red-500 my-4" href="#">Home</a>
-                <a className="text-2xl font-bold text-red-500 my-4" href="/dashboard">Home</a>
-                <a className="text-2xl font-bold text-red-500 my-4" href="#">Home</a>
+                <a className="text-2xl font-bold text-red-500 my-4" href="/">Home</a>
+                <a className="text-2xl font-bold text-red-500 my-4" href="/dashboard">Dashboard</a>
+                <a className="text-2xl font-bold text-red-500 my-4" href="#">About the project</a>
             </div>
         </div>
     )
